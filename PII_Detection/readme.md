@@ -21,6 +21,7 @@ Alfresco Intelligence Service leverages AWS Comprehend which uses Natural Langua
 
 <details>
 		<summary>Expand this section for the sample javascript.</summary>
+		
 ```javascript
 		if(schemas[t][key].type == "SSN")
 		{
@@ -39,7 +40,7 @@ Alfresco Intelligence Service leverages AWS Comprehend which uses Natural Langua
 
 
 ```javascript
-		if(schemas[t][key].type == "BANK_ROUTING")
+	if(schemas[t][key].type == "BANK_ROUTING")
 		{
 			logger.log(schemas[t][key].type + " Identified ");
 			logger.log("parent id: " + document.getParent().id);
