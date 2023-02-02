@@ -46,5 +46,6 @@ try {
 ## Run the DEMO
 
 ## References
+* Repo Javascript Root Object Extension Point : <https://docs.alfresco.com/content-services/6.0/develop/repo-ext-points/javascript-root-objects/>
 * Creating Script Root Object : <https://www.youtube.com/watch?v=jGG60evBQ44&t=84s>
 * Get Alfresco HostName : <https://github.com/sherrymax/acs-examples/tree/master/acs-get-alfresco-hostname>
