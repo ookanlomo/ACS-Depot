@@ -23,19 +23,19 @@ Alfresco Intelligence Service leverages AWS Comprehend which uses Natural Langua
 		<summary>Expand this section for the sample javascript.</summary>
 		
 ```javascript
-		if(schemas[t][key].type == "SSN")
-		{
-			logger.log(schemas[t][key].type + " Identified ");
-			logger.log("parent id: " + document.getParent().id);
+	if(schemas[t][key].type == "SSN")
+	{
+		logger.log(schemas[t][key].type + " Identified ");
+		logger.log("parent id: " + document.getParent().id);
 										
-			var requestBody = '{"id": "zMKc15jZ","groupId": "5643299b-8f8c-4f47-8f62-7cd51cac6766","op": "ADD"}';										
+		var requestBody = '{"id": "zMKc15jZ","groupId": "5643299b-8f8c-4f47-8f62-7cd51cac6766","op": "ADD"}';										
 
-			logger.log(requestBody);
+		logger.log(requestBody);
 										
 																											
-			http.post('http://ec2-54-89-143-94.compute-1.amazonaws.com/alfresco/api/-default-/public/gs/versions/1/secured-nodes/' + document.getParent().id + '/securing-marks', requestBody, "application/json;charset=UTF-8", "demo", "demo");
-			logger.error(r);									
-		}
+		http.post('http://ec2-54-89-143-94.compute-1.amazonaws.com/alfresco/api/-default-/public/gs/versions/1/secured-nodes/' + document.getParent().id + '/securing-marks', requestBody, "application/json;charset=UTF-8", "demo", "demo");
+		logger.error(r);									
+	}
 ```
 
 
