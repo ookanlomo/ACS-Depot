@@ -58,9 +58,9 @@ Alfresco Intelligence Service leverages AWS Comprehend which uses Natural Langua
 
 <br/>
 
-4. Save and update the description of the javascript
+3. Save and update the description of the javascript
 
-5.  Configure Folder Rules to:
+4.  Configure Folder Rules to:
     1. Add Aspects.
     ![add-aspects](artifacts/5a.png)
     2. Perform AI Renditions (AWS Textract).
