@@ -21,13 +21,12 @@ Alfresco Intelligence Service leverages AWS Comprehend which uses Natural Langua
 
 <details>
 		<summary>Expand this section for the sample javascript.</summary>
-``` javascript
+```javascript
 		if(schemas[t][key].type == "SSN")
 		{
 			logger.log(schemas[t][key].type + " Identified ");
 			logger.log("parent id: " + document.getParent().id);
 										
-
 			var requestBody = '{"id": "zMKc15jZ","groupId": "5643299b-8f8c-4f47-8f62-7cd51cac6766","op": "ADD"}';										
 
 			logger.log(requestBody);
