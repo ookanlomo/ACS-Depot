@@ -7,7 +7,7 @@ An HTTP call (GET, POST, PUT etc) has to be triggered from ACS.
 ### Prerequisites to run this demo end-2-end
 
 * Alfresco Content Services (Version 7.0 and above)
-* [HTTP Jar](../http_js-platform-1.0-SNAPSHOT.jar) 
+* [HTTP Jar](artifacts/http_js-platform-1.0-SNAPSHOT.jar) 
 * [JS Console - Repo](artifacts/javascript-console-repo-0.7-SNAPSHOT.amp)  (if running on ACS v7.0/7.1)
 * [JS Console - Share](artifacts/javascript-console-share-0.7-SNAPSHOT.amp)  (if running on ACS v7.0/7.1)
 
