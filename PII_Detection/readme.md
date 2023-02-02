@@ -17,7 +17,7 @@ Alfresco Intelligence Service leverages AWS Comprehend which uses Natural Langua
 1. Install/Deploy `Alfresco Intelligence Services`.
 > Note: ADP Users should deploy AIS using `./adp.py deploy ai` followed by STOP and START of all containers.
 
-2. Develop the Javascript for OCR extraction and updating the metadata.  Full Script found at [piiDetection.js](artifacts/piiDetection.js)
+2. Develop the Javascript for OCR extraction and updating the metadata.  Full Script found at [piiDetection.js](artifacts/aiPIIDetection.js)
 
 <details>
 		<summary>Expand this section for the sample javascript.</summary>
