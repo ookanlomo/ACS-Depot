@@ -1,4 +1,4 @@
-#### This article details the steps required to invoke HTTP calls from ACS, Updated to handle both 200 and 201 response codes from the Alfresco APIs
+#### This article details the steps required to invoke HTTP calls from ACS, Updated to support both 200 and 201 response codes from the Alfresco APIs
 
 ### Use-Case / Requirement
 
