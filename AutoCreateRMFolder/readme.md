@@ -18,24 +18,24 @@ Trigger creation of an Record Management folder in a targeted file plan & declar
 3. Create Script with desired logic and deploy to ACS, Example -> [RM_CreateFolder_DeclareDocs.js](artifacts/RM_CreateFolder_DeclareDocs.js)
 4. Update ACS folder rules to run script for desired criteria
 
-## Javascript examples that invoke HTTP
+## Javascript Examples
 
 ```javascript
-		var requestBody = '{"name":"' + document.name + '","nodeType":"rma:recordFolder"}';
-		logger.log(requestBody);
-		//replace {HostName}
-		//replace {TargetRecordCategory} with parent record category nodeID
-		//creates record folder
-		var r = http2.post('{HostName}/alfresco/api/-default-/public/gs/versions/1/record-categories/{TargetRecordCategory}/children',requestBody, "","demo", "demo");
+var requestBody = '{"name":"' + document.name + '","nodeType":"rma:recordFolder"}';
+logger.log(requestBody);
+//replace {HostName}
+//replace {TargetRecordCategory} with parent record category nodeID
+//creates record folder
+var r = http2.post('{HostName}/alfresco/api/-default-/public/gs/versions/1/record-categories/{TargetRecordCategory}/children',requestBody, "","demo", "demo");
 ```
 
 
 ```javascript
-		var requestBody = '{}';				
-		//replace {HostName}
-		//replace {TargetRecordCategory} with parent record category nodeID
-		//declares doc as record in target folder folderID
-		http2.post('{HostName}/alfresco/api/-default-/public/gs/versions/1/files/'+ test[doc].getId() +'/declare?hideRecord=false&parentId=' + folderID,requestBody, "","demo", "demo")
+var requestBody = '{}';				
+//replace {HostName}
+//replace {TargetRecordCategory} with parent record category nodeID
+//declares doc as record in target folder folderID
+http2.post('{HostName}/alfresco/api/-default-/public/gs/versions/1/files/'+ test[doc].getId() +'/declare?hideRecord=false&parentId=' + folderID,requestBody, "","demo", "demo")
 ```
 
 ## Run the DEMO
