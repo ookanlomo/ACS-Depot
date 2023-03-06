@@ -1,4 +1,4 @@
-#### This article details the steps required to invoke HTTP calls from ACS, Updated to support both 200 and 201 response codes from the Alfresco APIs
+#### This article details the steps required to invoke HTTP calls from ACS, Updated to handle both 200 and 201 response codes from the Alfresco APIs.  Also updated to support HTTP "PUT" Requests.
 
 ### Use-Case / Requirement
 
@@ -7,7 +7,7 @@ An HTTP call (GET, POST, PUT etc) has to be triggered from ACS.
 ### Prerequisites to run this demo end-2-end
 
 * Alfresco Content Services (Version 7.0 and above)
-* [HTTP Jar](artifacts/http_js-platform-1.0-SNAPSHOT.jar) 
+* [HTTP Jar](../http_js-platform-1.0-SNAPSHOT.jar) 
 * [JS Console - Repo](artifacts/javascript-console-repo-0.7-SNAPSHOT.amp)  (if running on ACS v7.0/7.1)
 * [JS Console - Share](artifacts/javascript-console-share-0.7-SNAPSHOT.amp)  (if running on ACS v7.0/7.1)
 
@@ -26,7 +26,7 @@ print(r);
 
 ```javascript
 var requestBody = '{ "id": "9909", "name": "Sam Jackson M.D", "address": "123 Sample Ave, Harford, CT 08661"}';
-var r = http2.post('http://ec2-1-2-3-4.compute-1.amazonaws.com:4000/doctors', requestBody, "", "", "");
+var r = http2.post('http://ec2-1-2-3-4.compute-1.amazonaws.com:4000/doctors', requestBody, "application/json", "uname", "pw");
 logger.error(r);
 ```
 
@@ -35,7 +35,7 @@ try {
     var hostName = 'http://' + sysAdmin.getHost();
 	var requestBody = '{ "id": "9909", "name": "Sam Jackson M.D", "address": "123 Sample Ave, Harford, CT 08661"}';
 
-    var res = http2.post(requestURL, requestBody, "application/json", 'demo', 'demo');
+    var res = http2.post(requestURL, requestBody, "application/json", 'uname', 'pw');
     logger.log(res);
 
 } catch (ex) {
@@ -43,9 +43,14 @@ try {
 }
 ```
 
+```javascript
+var requestBody = '{"name":"Passport"}';
+var r = http2.put(requestURL, requestBody, "application/json", "uname", "pw");
+logger.error(r);
+```
+
 ## Run the DEMO
 
 ## References
-* Repo Javascript Root Object Extension Point : <https://docs.alfresco.com/content-services/6.0/develop/repo-ext-points/javascript-root-objects/>
 * Creating Script Root Object : <https://www.youtube.com/watch?v=jGG60evBQ44&t=84s>
 * Get Alfresco HostName : <https://github.com/sherrymax/acs-examples/tree/master/acs-get-alfresco-hostname>
