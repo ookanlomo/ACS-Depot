@@ -17,7 +17,7 @@ Alfresco Intelligence Service leverages AWS Comprehend which uses Natural Langua
 1. Install/Deploy `Alfresco Intelligence Services`.
 > Note: ADP Users should deploy AIS using `./adp.py deploy ai` followed by STOP and START of all containers.
 
-2. Develop the Javascript for OCR extraction and updating the metadata.  Full Script found at [aipiiDetection.js](artifacts/aiPIIDetection.js)
+2. Develop the Javascript for OCR extraction and updating the metadata.  Full Script found at [piiDetection.js](artifacts/piiDetection.js)
 
 <details>
 		<summary>Expand this section for the sample javascript.</summary>
@@ -33,7 +33,7 @@ Alfresco Intelligence Service leverages AWS Comprehend which uses Natural Langua
 		logger.log(requestBody);
 										
 																											
-		http.post('{hostname}/alfresco/api/-default-/public/gs/versions/1/secured-nodes/' + document.getParent().id + '/securing-marks', requestBody, "application/json;charset=UTF-8", "demo", "demo");
+		http.post('http://ec2-54-89-143-94.compute-1.amazonaws.com/alfresco/api/-default-/public/gs/versions/1/secured-nodes/' + document.getParent().id + '/securing-marks', requestBody, "application/json;charset=UTF-8", "demo", "demo");
 		logger.error(r);									
 	}
 ```
@@ -49,7 +49,7 @@ Alfresco Intelligence Service leverages AWS Comprehend which uses Natural Langua
 			var requestBody = '{"id": "zMKc15jZ","groupId": "5643299b-8f8c-4f47-8f62-7cd51cac6766","op": "ADD"}';												
 			logger.log(requestBody);
 																																		
-			http.post('{hostname}/alfresco/api/-default-/public/gs/versions/1/secured-nodes/' + document.getParent().id + '/securing-marks', requestBody, "application/json;charset=UTF-8", "demo", "demo");
+			http.post('http://ec2-54-89-143-94.compute-1.amazonaws.com/alfresco/api/-default-/public/gs/versions/1/secured-nodes/' + document.getParent().id + '/securing-marks', requestBody, "application/json;charset=UTF-8", "demo", "demo");
 			
 			logger.error(r);									
 
@@ -58,7 +58,6 @@ Alfresco Intelligence Service leverages AWS Comprehend which uses Natural Langua
 </details>
 
 <br/>
-
 3. Save and update the description of the javascript
 
 4.  Configure Folder Rules to:
