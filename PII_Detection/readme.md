@@ -25,41 +25,40 @@ Alfresco Intelligence Service leverages Amazon Comprehend uses a pre-trained mod
 4. Create Classification Guide in the administration console
 
 5. Use Governance Security Marks API to find the Group ID and Security Mark ID 
-[GroupID API](assets/Groupid.png) <br/>
-[Security Mark API](assets/secmark.png) <br/>
+[GroupID API](artifacts/Groupid.png) <br/>
+[Security Mark API](artifacts/secmark.png) <br/>
 
 6. Develop the Javascript for PII extraction and updating the metadata.
 
 <details>
 		<summary>Expand this section for the javascript.</summary>
 ```javascript									
-				if(schemas[t][key].type == "SSN")
-				{
-					logger.log(schemas[t][key].type + " Identified ");
-					logger.log("parent id: " + document.getParent().id);
+if(schemas[t][key].type == "SSN")
+{
+	logger.log(schemas[t][key].type + " Identified ");
+	logger.log("parent id: " + document.getParent().id);
 										
-					var requestBody = '{"id": "zMKc15jZ","groupId": "5643299b-8f8c-4f47-8f62-7cd51cac6766","op": "ADD"}';										
+	var requestBody = '{"id": "zMKc15jZ","groupId": "5643299b-8f8c-4f47-8f62-7cd51cac6766","op": "ADD"}';										
 
-					logger.log(requestBody);
-										
-																											
-					http.post('{HostName}/alfresco/api/-default-/public/gs/versions/1/secured-nodes/' + document.getParent().id + '/securing-marks', requestBody, "application/json;charset=UTF-8", "demo", "demo");
-					logger.error(r);									
-				}
+	logger.log(requestBody);
+																																				
+	http.post('{HostName}/alfresco/api/-default-/public/gs/versions/1/secured-nodes/' + document.getParent().id + '/securing-marks', requestBody, "application/json;charset=UTF-8", "uname", "pw");
+	logger.error(r);									
+}
 ```
 ```javascript
-				if(schemas[t][key].type == "BANK_ROUTING")
-				{
-					logger.log(schemas[t][key].type + " Identified ");
-					logger.log("parent id: " + document.getParent().id);
+if(schemas[t][key].type == "BANK_ROUTING")
+{
+	logger.log(schemas[t][key].type + " Identified ");
+	logger.log("parent id: " + document.getParent().id);
 										
-					var requestBody = '{"id": "zMKc15jZ","groupId": "5643299b-8f8c-4f47-8f62-7cd51cac6766","op": "ADD"}';												
-					logger.log(requestBody);					
+	var requestBody = '{"id": "zMKc15jZ","groupId": "5643299b-8f8c-4f47-8f62-7cd51cac6766","op": "ADD"}';												
+	logger.log(requestBody);					
 																											
-					http.post('{HostName}/alfresco/api/-default-/public/gs/versions/1/secured-nodes/' + document.getParent().id + '/securing-marks', requestBody, "application/json;charset=UTF-8", "demo", "demo");
-					logger.error(r);									
+	http.post('{HostName}/alfresco/api/-default-/public/gs/versions/1/secured-nodes/' + document.getParent().id + '/securing-marks', requestBody, "application/json;charset=UTF-8", "uname", "pw");
+	logger.error(r);									
 
-				}	
+}	
 ```								
 </details>
 <br/>
@@ -68,13 +67,13 @@ Alfresco Intelligence Service leverages Amazon Comprehend uses a pre-trained mod
 
 5.  Configure Folder Rules to:
     1. Add Aspects.
-    ![add-aspects](assets/5a.png)
+    ![add-aspects](artifacts/5a.png)
     2. Perform AI Renditions (AWS Comprehend).
-    ![ai-rendition](assets/5b.png)
+    ![ai-rendition](artifacts/5b.png)
     3. Execute javascript to update metadata.
-    ![execute-js](assets/5c.png)
+    ![execute-js](artifacts/5c.png)
 
 
 ### ACS : Results
 The resulting view :
-![result](assets/5d.png)
+![result](artifacts/5d.png)
