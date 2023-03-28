@@ -24,14 +24,13 @@ Alfresco Intelligence Service leverages Amazon Comprehend uses a pre-trained mod
 
 4. Create Classification Guide in the administration console
 
-5. Use Governance Security Marks API to find the Group ID and Security Mark ID 
+5. Use Governance Security Marks API to find the Group ID and Security Mark ID <br/>
 [GroupID API](artifacts/Groupid.png) <br/>
 [Security Mark API](artifacts/secmark.png) <br/>
 
 6. Develop the Javascript for PII extraction and updating the metadata.
 
-<details>
-		<summary>Expand this section for the javascript.</summary>
+## Javascript Examples that Utilize Secured Nodes API
 ```javascript									
 if(schemas[t][key].type == "SSN")
 {
@@ -59,21 +58,20 @@ if(schemas[t][key].type == "BANK_ROUTING")
 	logger.error(r);									
 
 }	
-```								
-</details>
+```	
 <br/>
 
 4. Save and update the description of the javascript
 
 5.  Configure Folder Rules to:
-    1. Add Aspects.
+    1. Add Aspects.<br/>
     ![add-aspects](artifacts/5a.png)
-    2. Perform AI Renditions (AWS Comprehend).
+    2. Perform AI Renditions (AWS Comprehend).<br/>
     ![ai-rendition](artifacts/5b.png)
-    3. Execute javascript to update metadata.
+    3. Execute javascript to update metadata.<br/>
     ![execute-js](artifacts/5c.png)
 
 
 ### ACS : Results
-The resulting view :
+The resulting view :<br/>
 ![result](artifacts/5d.png)
