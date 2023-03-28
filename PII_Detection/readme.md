@@ -1,22 +1,23 @@
-#### This article details the steps required to configure Alfresco Intelligence Service (AIS) to perform Rekognition for objects, people, text, scenes, and activities identificaton to auto label content within ACS.  Useful when looking to drive additional processing based on subjects identified.    
+#### This article details the steps required to configure Alfresco Intelligence Service (AIS) to perform AWS Comprehend text analysis detecting personally identifiable information (PII) in English text documents  within ACS.  Useful when looking automate additional security processing based on PII identified.    
 
 ### Use-Case / Requirement
-The Alfresco system should perform powerful visual analysis on ingested documents.  Using Rekognition objects, scenes, activities, landmarks, faces, dominant colors, and image quality should be available as metadata of the ingested document.  This metadata can be used to deliver timely and actionable alerts when a desired object is detected. Use facial comparison and analysis in your user onboarding and authentication workflows to remotely verify the identity of a user.  The list of use cases could go on.
+The Alfresco system should perform textual analysis on ingested documents.  Comprehend uses natural language processing (NLP) to extract insights about the content of documents. It develops insights by recognizing the entities, key phrases, language, sentiments, and other common elements in a document.  Using AIS this data is available as metadata associated with the ingested document.  This metadata can be used to deliver timely and actionable alerts or processing when Personally Identifiable Information is detected. Use the detection and analysis in evaluating to remotely verify the identity of a user.  The list of use cases could go on.
 
 ### How It Works
-Alfresco Intelligence Service leverages AWS Rekognition which uses ML, once trained, to extract iand identify objects and scenes in images that are specific to your business needs.
+Alfresco Intelligence Service leverages Amazon Comprehend uses a pre-trained model to examine and analyze a document or set of documents to gather insights about it.
 
 ###Documentation
 1. https://docs.alfresco.com/intelligence-services/latest/
 2. https://docs.alfresco.com/intelligence-services/latest/admin/
-3. https://docs.aws.amazon.com/rekognition/latest/dg/what-is.html
+3. https://docs.aws.amazon.com/comprehend/latest/dg/what-is.html
+4. https://docs.aws.amazon.com/comprehend/latest/dg/how-pii.html
 
 
 ##Configuration
-1. Install/Deploy `Alfresco Intelligence Services`.
+1. Install/Deploy `Alfresco Intelligence Services`
 > Note: ADP Users should deploy AIS using `./adp.py deploy ai` followed by STOP and START of all containers.
 
-2. Install/Deploy `Alfresco Gosvernance Services`
+2. Install/Deploy `Alfresco Governance Services`
 > Note: ADP Users should deploy AIS using `./adp.py deploy ags` followed by STOP and START of all containers.
 
 3. Create Security Marks in Administration console
@@ -25,12 +26,13 @@ Alfresco Intelligence Service leverages AWS Rekognition which uses ML, once trai
 
 5. Use Governance Security Marks API to find the Group ID and Security Mark ID 
 [GroupID API](assets/Groupid.png) <br/>
-[Security Mark API](assets/secmark.png)
-2. Develop the Javascript for OCR extraction and updating the metadata.
+[Security Mark API](assets/secmark.png) <br/>
+
+6. Develop the Javascript for PII extraction and updating the metadata.
 
 <details>
 		<summary>Expand this section for the javascript.</summary>
-``` javascript									
+```javascript									
 				if(schemas[t][key].type == "SSN")
 				{
 					logger.log(schemas[t][key].type + " Identified ");
