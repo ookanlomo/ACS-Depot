@@ -61,9 +61,9 @@ if(schemas[t][key].type == "BANK_ROUTING")
 ```	
 <br/>
 
-4. Save and update the description of the javascript
+7. Save and update the description of the javascript
 
-5.  Configure Folder Rules to:
+8.  Configure Folder Rules to:
     1. Add Aspects.<br/>
     ![add-aspects](artifacts/5a.png)
     2. Perform AI Renditions (AWS Comprehend).<br/>
@@ -74,4 +74,5 @@ if(schemas[t][key].type == "BANK_ROUTING")
 
 ### ACS : Results
 The resulting view :<br/>
+Appying Security Marks at the folder level securing the entire record/object and not just the document itself.
 ![result](artifacts/5d.png)
