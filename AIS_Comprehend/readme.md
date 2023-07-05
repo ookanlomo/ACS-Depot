@@ -39,5 +39,6 @@ Alfresco Intelligence Service leverages Amazon Comprehend uses a pre-trained mod
 ### ACS : Results
 The resulting view :<br/>
 Appying custom aspect with classification identified.
+![result_dws](artifacts/dws_final.png)
 ![result](artifacts/Application1.png)
 ![result2](artifacts/License1.png)
