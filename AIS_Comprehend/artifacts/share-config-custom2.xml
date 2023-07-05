@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alfresco-config>
+    <config evaluator="string-compare" condition="DocumentLibrary">
+        <!-- Aspects that a user can see -->
+        <aspects>
+            <visible>
+                <aspect name="ins:categories"/>
+            </visible>
+        </aspects>
+    </config>
+</alfresco-config>

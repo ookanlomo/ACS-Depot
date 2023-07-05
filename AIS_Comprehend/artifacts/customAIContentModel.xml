@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="ins:aicontentModel" xmlns="http://www.alfresco.org/model/dictionary/1.0">
+
+    <description>Custom Content Model for Artificial Intelligence extension</description>
+    <version>1.0</version>
+
+    <imports>
+        <import uri="http://www.alfresco.org/model/content/1.0" prefix="cm" />
+        <import uri="http://www.alfresco.org/model/dictionary/1.0" prefix="d" />
+        <import uri="http://www.alfresco.org/model/site/1.0" prefix="st" />
+        <import uri="http://www.alfresco.org/model/system/1.0" prefix="sys" />
+        <import uri="http://www.alfresco.org/model/ai/1.0" prefix="ai"/>
+    </imports>
+
+    <namespaces>
+        <namespace uri="http://argglobal.org" prefix="ins" />
+    </namespaces>
+
+    <aspects>
+
+        <aspect name="ins:categories">
+            <title>AI Categories</title>
+            <parent>ai:classifier</parent>
+            <properties>
+                <property name="ins:category">
+                    <title>AI Category</title>
+                    <type>d:text</type>
+                    <multiple>true</multiple>
+                    <index enabled="true">
+                        <tokenised>both</tokenised>
+                        <facetable>true</facetable>
+                    </index>
+                </property>
+            </properties>
+        </aspect>
+    </aspects>
+</model>

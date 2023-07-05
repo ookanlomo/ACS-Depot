@@ -1,0 +1,10 @@
+{
+  "categoryToPropertyMapping": [
+    {
+      "aiClassificationIns": {
+        "aspect": "ins:categories",
+        "property": "ins:category"
+      }
+    }
+  ]
+}
