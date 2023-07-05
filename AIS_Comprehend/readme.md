@@ -21,7 +21,7 @@ Alfresco Intelligence Service leverages Amazon Comprehend uses a pre-trained mod
 > Note: ADP Users should deploy AIS using `./adp.py deploy ai` followed by STOP and START of all containers.
 
 2. Train Custom Classification Model
-![training-file](artifacts/TrainingFile.png)
+![training-file](artifacts/TrainingFile.png) <br>
 ![training-model](artifacts/TrainedModel1.png) 
 
 3. Create and deploy/mount the appropriate configuration files required based on the service used for interaction shown below :
