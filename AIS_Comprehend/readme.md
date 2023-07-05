@@ -22,7 +22,7 @@ Alfresco Intelligence Service leverages Amazon Comprehend uses a pre-trained mod
 
 2. Train Custom Classification Model
 ![training-file](artifacts/TrainingFile.png)
-![training-model](artifacts/TrainedModel.png) 
+![training-model](artifacts/TrainedModel1.png) 
 
 3. Create and deploy/mount the appropriate configuration files required based on the service used for interaction shown below :
 ![update-config](artifacts/ConfigurationFilesRequired.png)
