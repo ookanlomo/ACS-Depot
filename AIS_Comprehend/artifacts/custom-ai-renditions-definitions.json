@@ -4,7 +4,7 @@
       "renditionName": "aiClassificationIns",
       "targetMediaType": "application/vnd.alfresco.ai.classifiers.v1+json",
       "options": [
-        {"name": "endpointAwsComprehendClassifier", "value": "arn:aws:comprehend:us-east-1:047614345379:document-classifier/InsuranceTest/version/9"},
+        {"name": "endpointAwsComprehendClassifier", "value": "{InsertApplicableARNHere}"},
         {"name": "maxResults", "value": 1},
         {"name": "minConfidence", "value": 0.2},
         {"name": "timeout", "value": 500000}
