@@ -25,7 +25,7 @@ Alfresco Intelligence Service leverages Amazon Comprehend uses a pre-trained mod
 4. Create Classification Guide in the administration console
 
 5. Use Governance Security Marks API to find the Group ID and Security Mark ID <br/>
-[GroupID API](artifacts/Groupid.png) <br/>
+[GroupID API](artifacts/GroupID.png) <br/>
 [Security Mark API](artifacts/secmark.png) <br/>
 
 6. Develop the Javascript for PII extraction and updating the metadata.
